@@ -1,0 +1,15 @@
+
+
+./redis-cli --cluster create 192.168.0.103:8001 192.168.0.103:8002 192.168.0.103:8003 192.168.0.103:8004 192.168.0.103:8005 192.168.0.103:8006 --cluster-replicas 1
+
+
+
+#查看
+ps -ef |grep redis-server
+
+#错误解决　删除
+appendonly.aof dump.rdb nodes-7003.conf
+
+#进入每个节点 redis-cli -c -h 192.168.0.103 -p 8001
+flushdb
+cluster reset
