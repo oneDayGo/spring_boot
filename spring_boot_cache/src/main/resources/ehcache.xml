@@ -1,0 +1,38 @@
+<ehcache>
+    <diskStore path="java.io.tmpdir/cache"></diskStore>
+    <defaultCache
+        maxElementsInMemory="1000"
+        eternal="false"
+        timeToIdleSeconds="120"
+        overflowToDisk="false"
+        diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="120"
+    />
+
+    <cache name="book_cache"
+
+           maxElementsInMemory="1000"
+           eternal="true"
+           timeToIdleSeconds="120"
+           timeToLiveSeconds="120"
+           overflowToDisk="true"
+           diskPersistent="true"
+           diskExpiryThreadIntervalSeconds="600"
+
+    />
+<!--
+    maxElementsInMemory 最大缓存个数
+    eternal 是否永久
+    timeToIdleSeconds  缓存失效允许闲置的时间  eternal = false时才会有效
+    timeToLiveSeconds 缓存失效时允许存活的时间 eternal = false时才会有效
+    diskPersistent 缓存对象达到maxElementsInMemory时是否写入磁盘
+    diskExpiryThreadIntervalSeconds 磁盘失效线程运行时间间隔
+
+
+
+-->
+
+
+
+
+</ehcache>
